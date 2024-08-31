@@ -1,0 +1,118 @@
+@charset "UTF-8";
+body {
+  background: #666;
+  background: linear-gradient(#222, #222, #222);
+}
+
+button {
+  padding: 7px;
+  background-color: white;
+  border: none;
+  outline: none;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cilindro {
+  margin: 300px auto;
+  height: 170px;
+  width: 100px;
+  perspective: 1000px; /* Aumenta a perspectiva para uma visualização melhor */
+}
+
+.box-cilindro {
+  position: relative; /* Modificado de absolute para relative */
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a rotação */
+}
+.box-cilindro .lados {
+  position: absolute;
+  left: 80px;
+  height: 180px;
+  width: 20px;
+  background-color: #3498db;
+  border: 1px solid #2980b9;
+}
+.box-cilindro .tampa {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade (ajustável) */
+}
+.box-cilindro .tampa1 {
+  transform: rotateX(-90deg) translate(42px, 0) translateZ(-3.1em);
+  background-color: rgba(255, 0, 0, 0.8); /* Cor sólida para a tampa1 */
+}
+.box-cilindro .tampa2 {
+  transform: rotateX(-90deg) translate(42px, 0) translateZ(8em);
+  background-color: rgba(0, 255, 0, 0.8); /* Cor sólida para a tampa2 */
+}
+
+.lados:nth-child(1) {
+  transform: rotateY(22.5deg) translateZ(46px);
+}
+
+.lados:nth-child(2) {
+  transform: rotateY(45deg) translateZ(46px);
+}
+
+.lados:nth-child(3) {
+  transform: rotateY(67.5deg) translateZ(46px);
+}
+
+.lados:nth-child(4) {
+  transform: rotateY(90deg) translateZ(46px);
+}
+
+.lados:nth-child(5) {
+  transform: rotateY(112.5deg) translateZ(46px);
+}
+
+.lados:nth-child(6) {
+  transform: rotateY(135deg) translateZ(46px);
+}
+
+.lados:nth-child(7) {
+  transform: rotateY(157.5deg) translateZ(46px);
+}
+
+.lados:nth-child(8) {
+  transform: rotateY(180deg) translateZ(46px);
+}
+
+.lados:nth-child(9) {
+  transform: rotateY(202.5deg) translateZ(46px);
+}
+
+.lados:nth-child(10) {
+  transform: rotateY(225deg) translateZ(46px);
+}
+
+.lados:nth-child(11) {
+  transform: rotateY(247.5deg) translateZ(46px);
+}
+
+.lados:nth-child(12) {
+  transform: rotateY(270deg) translateZ(46px);
+}
+
+.lados:nth-child(13) {
+  transform: rotateY(292.5deg) translateZ(46px);
+}
+
+.lados:nth-child(14) {
+  transform: rotateY(315deg) translateZ(46px);
+}
+
+.lados:nth-child(15) {
+  transform: rotateY(337.5deg) translateZ(46px);
+}
+
+.lados:nth-child(16) {
+  transform: rotateY(360deg) translateZ(46px);
+}
+
+/*# sourceMappingURL=main.css.map */
