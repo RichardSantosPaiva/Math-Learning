@@ -1,31 +1,68 @@
-const cube = document.getElementById('cube');
-let isDragging = false;
-let previousMousePosition = { x: 0, y: 0 };
-let rotation = { x: 0, y: 0 }; // Para armazenar a rotação atual
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicialize animações do cubo
+  const cube = document.getElementById('cube');
+  let isDragging = false;
+  let previousMousePosition = { x: 0, y: 0 };
+  let rotation = { x: 0, y: 0 };
 
-cube.addEventListener('mousedown', (event) => {
-  isDragging = true;
-  previousMousePosition = { x: event.clientX, y: event.clientY };
-  cube.style.cursor = 'grabbing'; // Muda o cursor ao arrastar
-});
+  cube.addEventListener('mousedown', (event) => {
+    isDragging = true;
+    previousMousePosition = { x: event.clientX, y: event.clientY };
+    cube.style.cursor = 'grabbing';
+  });
 
-document.addEventListener('mousemove', (event) => {
-  if (!isDragging) return;
+  document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
 
-  const deltaX = event.clientX - previousMousePosition.x;
-  const deltaY = event.clientY - previousMousePosition.y;
+    const deltaX = event.clientX - previousMousePosition.x;
+    const deltaY = event.clientY - previousMousePosition.y;
 
-  // Atualiza a rotação do cubo com base no movimento do mouse
-  rotation.y += deltaX * 0.5; // Ajuste a sensibilidade conforme necessário
-  rotation.x -= deltaY * 0.5; // Ajuste a sensibilidade conforme necessário
+    rotation.y += deltaX * 0.5;
+    rotation.x -= deltaY * 0.5;
 
-  // Aplica a nova rotação ao cubo
-  cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
+    cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
 
-  previousMousePosition = { x: event.clientX, y: event.clientY };
-});
+    previousMousePosition = { x: event.clientX, y: event.clientY };
+  });
 
-document.addEventListener('mouseup', () => {
-  isDragging = false;
-  cube.style.cursor = 'grab'; // Restaura o cursor
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    cube.style.cursor = 'grab';
+  });
+
+  // Inicialize animações do cilindro
+  const cilindro = document.getElementById('cilindro');
+  let isDraggingCilindro = false;
+  let startX, startY;
+  let rotateX = 0;
+  let rotateY = 0;
+
+  cilindro.addEventListener('mousedown', (e) => {
+    isDraggingCilindro = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDraggingCilindro) return;
+
+    const currentX = e.clientX;
+    const currentY = e.clientY;
+    
+    const deltaX = currentX - startX;
+    const deltaY = currentY - startY;
+
+    rotateY += deltaX * 0.5;
+    rotateX -= deltaY * 0.5;
+
+    cilindro.querySelector('.box-cilindro').style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    startX = currentX;
+    startY = currentY;
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDraggingCilindro = false;
+  });
 });
