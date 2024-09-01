@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cubo 3D Arrastável</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      perspective: 500px;
+      overflow: hidden; /* Para evitar rolagem ao arrastar */
+    }
+
+    .cube {
+      width: 200px;
+      height: 200px;
+      animation: rotate 10s infinite alternate;
+      transform-style: preserve-3d;
+      cursor: grab; /* Muda o cursor para indicar que é arrastável */
+      position: relative; /* Para permitir a movimentação */
+    }
+
+    .face {
+      background: linear-gradient(45deg, #4fd1c522, #4fd1c5cc);
+      border: 2px solid #4fd1c5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      font-weight: bold;
+      color: #234e52;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+    }
+
+    .face--front {
+      transform: translateZ(100px);
+    }
+
+    .face--right {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .face--back {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+
+    .face--left {
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .face--top {
+      transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .face--bottom {
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cube" id="cube">
+    <div class="face face--front">Front</div>
+    <div class="face face--right">Right</div>
+    <div class="face face--back">Back</div>
+    <div class="face face--left">Left</div>
+    <div class="face face--top">Top</div>
+    <div class="face face--bottom">Bottom</div>
+  </div>
+
+  <script>
+    const cube = document.getElementById('cube');
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+    let rotation = { x: 0, y: 0 }; // Para armazenar a rotação atual
+
+    cube.addEventListener('mousedown', (event) => {
+      isDragging = true;
+      previousMousePosition = { x: event.clientX, y: event.clientY };
+      cube.style.cursor = 'grabbing'; // Muda o cursor ao arrastar
+    });
+
+    document.addEventListener('mousemove', (event) => {
+      if (!isDragging) return;
+
+      const deltaX = event.clientX - previousMousePosition.x;
+      const deltaY = event.clientY - previousMousePosition.y;
+
+      // Atualiza a rotação do cubo com base no movimento do mouse
+      rotation.y += deltaX * 0.5; // Ajuste a sensibilidade conforme necessário
+      rotation.x -= deltaY * 0.5; // Ajuste a sensibilidade conforme necessário
+
+      // Aplica a nova rotação ao cubo
+      cube.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`;
+
+      previousMousePosition = { x: event.clientX, y: event.clientY };
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      cube.style.cursor = 'grab'; // Restaura o cursor
+    });
+  </script>
+</body>
+</html>

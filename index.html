@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cubo 3D Arrastável</title>
+  <link rel="stylesheet" href="css/main.css"> <!-- Inclua o CSS compilado -->
+</head>
+<body>
+  <div class="container">
+    <div class="container-formas">
+      <div class="cube" id="cube">
+        <div class="face face--front">
+          Front
+          <p class="lado a">A</p>
+          <p class="lado b">B</p>
+          <p class="lado c">C</p>
+          <p class="lado d">D</p>
+        </div>
+        <div class="face face--right">
+          Right
+          <p class="lado a">E</p>
+          <p class="lado b">F</p>
+          <p class="lado c">G</p>
+          <p class="lado d">B</p>
+        </div>
+        <div class="face face--back">
+          Back
+          <p class="lado a">H</p>
+          <p class="lado b">I</p>
+          <p class="lado c">J</p>
+          <p class="lado d">F</p>
+        </div>
+        <div class="face face--left">
+          Left
+          <p class="lado a">K</p>
+          <p class="lado b">L</p>
+          <p class="lado c">M</p>
+          <p class="lado d">I</p>
+        </div>
+        <div class="face face--top">
+          Top
+          <p class="lado a">H</p>
+          <p class="lado b">E</p>
+          <p class="lado c">A</p>
+          <p class="lado d">K</p>
+        </div>
+        <div class="face face--bottom">
+          Bottom
+          <p class="lado a">C</p>
+          <p class="lado b">G</p>
+          <p class="lado c">J</p>
+          <p class="lado d">M</p>
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+
+      <div>
+        <button id="rotateToFront">Frente</button>
+        <button id="rotateToRight">Direita</button>
+        <button id="rotateToBack">Trás</button>
+        <button id="rotateToLeft">Esquerda</button>
+        <button id="rotateToTop">Topo</button>
+        <button id="rotateToBottom">Fundo</button>
+      </div>
+
+      <form id="letrasForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 70px;">
+        <label for="inputA">Letra A:</label>
+        <input type="text" id="inputA" placeholder="Digite valor para A">
+      
+        <label for="inputB">Letra B:</label>
+        <input type="text" id="inputB" placeholder="Digite valor para B">
+      
+        <label for="inputC">Letra C:</label>
+        <input type="text" id="inputC" placeholder="Digite valor para C">
+      
+        <label for="inputD">Letra D:</label>
+        <input type="text" id="inputD" placeholder="Digite valor para D">
+      
+        <label for="inputE">Letra E:</label>
+        <input type="text" id="inputE" placeholder="Digite valor para E">
+      
+        <label for="inputF">Letra F:</label>
+        <input type="text" id="inputF" placeholder="Digite valor para F">
+      
+        <label for="inputG">Letra G:</label>
+        <input type="text" id="inputG" placeholder="Digite valor para G">
+      
+        <label for="inputH">Letra H:</label>
+        <input type="text" id="inputH" placeholder="Digite valor para H">
+      
+        <label for="inputI">Letra I:</label>
+        <input type="text" id="inputI" placeholder="Digite valor para I">
+      
+        <label for="inputJ">Letra J:</label>
+        <input type="text" id="inputJ" placeholder="Digite valor para J">
+      
+        <label for="inputK">Letra K:</label>
+        <input type="text" id="inputK" placeholder="Digite valor para K">
+      
+        <label for="inputL">Letra L:</label>
+        <input type="text" id="inputL" placeholder="Digite valor para L">
+      
+        <label for="inputM">Letra M:</label>
+        <input type="text" id="inputM" placeholder="Digite valor para M">
+      </form>
+      
+    </div>
+    <div class="container-explicacao">
+      <div class="background">
+        texto explicação IA LHAMA, da play ele explica a conta..
+        <div class="texto">Texto</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="animacao-cubo.js"></script>
+</body>
+</html>
+
+ 
+      <!-- <div class="cilindro" id="cilindro">
+        <div class="box-cilindro">
+          <div class="lados border">1</div>
+          <div class="lados border">2</div>
+          <div class="lados border">3</div>
+          <div class="lados border">4</div>
+          <div class="lados border">5</div>
+          <div class="lados border">6</div>
+          <div class="lados border">7</div>
+          <div class="lados border">8</div>
+          <div class="lados border">9</div>
+          <div class="lados border">10</div>
+          <div class="lados border">11</div>
+          <div class="lados border">12</div>
+          <div class="lados border">13</div>
+          <div class="lados border">14</div>
+          <div class="lados border">15</div>
+          <div class="lados border">16</div>
+        </div>
+      </div> -->

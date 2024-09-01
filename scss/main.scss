@@ -1,0 +1,64 @@
+@mixin tamanhos($altura, $ancho) {
+  height: $altura;
+  width: $ancho;
+}
+
+body {
+  background: #666;
+  background: linear-gradient(#222, #222, #222);
+}
+
+button {
+  padding: 7px;
+  background-color: white;
+  border: none;
+  outline: none;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cilindro {
+  margin: 300px auto;
+  @include tamanhos(170px, 100px);
+  perspective: 1000px; /* Aumenta a perspectiva para uma visualização melhor */
+}
+
+.box-cilindro {
+  position: relative; /* Modificado de absolute para relative */
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a rotação */
+  
+  .lados {
+    position: absolute;
+    left: 80px;
+    @include tamanhos(180px, 20px);
+    background-color: #3498db;  // Adiciona cor de fundo
+    border: 1px solid #2980b9; // Adiciona uma borda
+  }
+
+  .tampa {
+    position: absolute;
+    @include tamanhos(100%, 100%);
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade (ajustável) */
+  }
+
+  .tampa1 {
+    transform: rotateX(-90deg) translate(42px, 0) translateZ(-3.1em);
+    background-color: rgba(255, 0, 0, 0.8); /* Cor sólida para a tampa1 */
+  }
+
+  .tampa2 {
+    transform: rotateX(-90deg) translate(42px, 0) translateZ(8em);
+    background-color: rgba(0, 255, 0, 0.8); /* Cor sólida para a tampa2 */
+  }
+}
+
+@for $var from 1 through 16 {
+  .lados:nth-child(#{$var}) {
+    transform: rotateY($var * 22.5deg) translateZ(46px);
+  }
+}
+

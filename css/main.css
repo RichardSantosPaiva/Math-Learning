@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background: #d8d8d8;
+}
+
+.container {
+  padding: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+  position: relative; /* Para garantir que o fundo e o texto se sobreponham corretamente */
+}
+
+.container-formas, .container-formas{
+  width: 100%;
+}
+
+.container-formas{
+  margin-top: 40px;
+  padding: 50px;
+border: 1px solid red;
+gap:20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*background-explicacao*/
+.background {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(to right, rgba(245, 245, 245, 0.5), rgba(237, 201, 72, 0.5));
+  backdrop-filter: blur(40px);
+}
+
+.cilindro {
+  display: none;/*  display: none;*/
+  margin: 300px auto;
+  height: 170px;
+  width: 100px;
+  perspective: 1000px; /* Aumenta a perspectiva para uma visualização melhor */
+}
+
+.box-cilindro {
+  position: relative; /* Modificado de absolute para relative */
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.5s ease; /* Adiciona uma transição suave para a rotação */
+}
+.box-cilindro .lados {
+  position: absolute;
+  left: 80px;
+  height: 180px;
+  width: 20px;
+  background-color: #3498db;
+  border: 1px solid #2980b9;
+}
+.box-cilindro .tampa {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade (ajustável) */
+}
+.box-cilindro .tampa1 {
+  transform: rotateX(-90deg) translate(42px, 0) translateZ(-3.1em);
+  background-color: rgba(255, 0, 0, 0.8); /* Cor sólida para a tampa1 */
+}
+.box-cilindro .tampa2 {
+  transform: rotateX(-90deg) translate(42px, 0) translateZ(8em);
+  background-color: rgba(0, 255, 0, 0.8); /* Cor sólida para a tampa2 */
+}
+
+.lados:nth-child(1) {
+  transform: rotateY(22.5deg) translateZ(46px);
+}
+
+.lados:nth-child(2) {
+  transform: rotateY(45deg) translateZ(46px);
+}
+
+.lados:nth-child(3) {
+  transform: rotateY(67.5deg) translateZ(46px);
+}
+
+.lados:nth-child(4) {
+  transform: rotateY(90deg) translateZ(46px);
+}
+
+.lados:nth-child(5) {
+  transform: rotateY(112.5deg) translateZ(46px);
+}
+
+.lados:nth-child(6) {
+  transform: rotateY(135deg) translateZ(46px);
+}
+
+.lados:nth-child(7) {
+  transform: rotateY(157.5deg) translateZ(46px);
+}
+
+.lados:nth-child(8) {
+  transform: rotateY(180deg) translateZ(46px);
+}
+
+.lados:nth-child(9) {
+  transform: rotateY(202.5deg) translateZ(46px);
+}
+
+.lados:nth-child(10) {
+  transform: rotateY(225deg) translateZ(46px);
+}
+
+.lados:nth-child(11) {
+  transform: rotateY(247.5deg) translateZ(46px);
+}
+
+.lados:nth-child(12) {
+  transform: rotateY(270deg) translateZ(46px);
+}
+
+.lados:nth-child(13) {
+  transform: rotateY(292.5deg) translateZ(46px);
+}
+
+.lados:nth-child(14) {
+  transform: rotateY(315deg) translateZ(46px);
+}
+
+.lados:nth-child(15) {
+  transform: rotateY(337.5deg) translateZ(46px);
+}
+
+.lados:nth-child(16) {
+  transform: rotateY(360deg) translateZ(46px);
+}
+
+/*# sourceMappingURL=main.css.map */
+
+/* CSS para o Cubo */
+.cube {
+  display: block;/*  display: none;*/
+  width: 200px;
+  height: 200px;
+  animation: rotate 10s infinite alternate;
+  transform-style: preserve-3d;
+  cursor: grab;
+  position: relative;
+}
+
+.face {
+  background: linear-gradient(45deg, #4fd1c522, #4fd1c5cc);
+  border: 2px solid #4fd1c5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #234e52;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+/**/
+.a {
+  position: absolute;
+  top: -100px;
+  transform:translateZ(100px);
+  border: 1px solid red; 
+  text-align:center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.b {
+  position: absolute;
+  right: -90px;
+  border: 1px solid red; 
+  text-align:center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.c {
+  position: absolute;
+  bottom: -110px;
+  border: 1px solid red; 
+  text-align:center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.d {
+  position: absolute;
+  left: -100px;
+  border: 1px solid red; 
+  text-align:center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.face--front { transform: translateZ(100px);}
+.face--right { transform: rotateY(90deg) translateZ(100px); }
+.face--back { transform: rotateY(180deg) translateZ(100px); }
+.face--left { transform: rotateY(-90deg) translateZ(100px); }
+.face--top { transform: rotateX(90deg) translateZ(100px); }
+.face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* CSS para o Cilindro */
+.box-cilindro {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.lados {
+  width: 200px;
+  height: 20px;
+  position: absolute;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+.border {
+  border: 1px solid #000;
+}
