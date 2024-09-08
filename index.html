@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="container-formas">
+      <div class="container-formas">
       <div class="cube" id="cube">
         <div class="face face--front">
           Front
@@ -55,6 +55,30 @@
         <div style="clear: both;"></div>
       </div>
 
+      <div class="cilindro" id="cilindro">
+        <div class="box-cilindro">
+          <div class="lados border">1</div>
+          <div class="lados border">2</div>
+          <div class="lados border">3</div>
+          <div class="lados border">4</div>
+          <div class="lados border">5</div>
+          <div class="lados border">6</div>
+          <div class="lados border">7</div>
+          <div class="lados border">8</div>
+          <div class="lados border">9</div>
+          <div class="lados border">10</div>
+          <div class="lados border">11</div>
+          <div class="lados border">12</div>
+          <div class="lados border">13</div>
+          <div class="lados border">14</div>
+          <div class="lados border">15</div>
+          <div class="lados border">16</div>
+          <!-- Tampas superior e inferior -->
+          <div class="tampa topo"></div>
+          <div class="tampa base"></div>
+        </div>
+      </div>    
+
       <div>
         <button id="rotateToFront">Frente</button>
         <button id="rotateToRight">Direita</button>
@@ -64,7 +88,7 @@
         <button id="rotateToBottom">Fundo</button>
       </div>
 
-      <form id="letrasForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 70px;">
+      <form id="letrasForm" style="display: grid; grid-template-columns: 1fr 1fr;">
         <label for="inputA">Letra A:</label>
         <input type="text" id="inputA" placeholder="Digite valor para A">
       
@@ -106,6 +130,26 @@
       </form>
       
     </div>
+
+      <div id="resultado">
+        <h2>Resultados</h2>
+        <p id="resultadoA">Área A: </p>
+        <p id="resultadoB">Área B: </p>
+        <p id="resultadoC">Área C: </p>
+        <p id="resultadoD">Área D: </p>
+        <p id="resultadoE">Área E: </p>
+        <p id="resultadoF">Área F: </p>
+        <p id="resultadoG">Área G: </p>
+        <p id="resultadoH">Área H: </p>
+        <p id="resultadoI">Área I: </p>
+        <p id="resultadoJ">Área J: </p>
+        <p id="resultadoK">Área K: </p>
+        <p id="resultadoL">Área L: </p>
+        <p id="resultadoM">Área M: </p>
+        <p id="resultadoAreaLateral">Área Lateral: </p>
+        <p id="resultadoAreaTotal">Área Total: </p>
+      </div>
+    </div>
     <div class="container-explicacao">
       <div class="background">
         texto explicação IA LHAMA, da play ele explica a conta..
@@ -113,29 +157,7 @@
       </div>
     </div>
   </div>
-
+  <script src="animacao-cilindro.js"></script>
   <script src="animacao-cubo.js"></script>
 </body>
 </html>
-
- 
-      <!-- <div class="cilindro" id="cilindro">
-        <div class="box-cilindro">
-          <div class="lados border">1</div>
-          <div class="lados border">2</div>
-          <div class="lados border">3</div>
-          <div class="lados border">4</div>
-          <div class="lados border">5</div>
-          <div class="lados border">6</div>
-          <div class="lados border">7</div>
-          <div class="lados border">8</div>
-          <div class="lados border">9</div>
-          <div class="lados border">10</div>
-          <div class="lados border">11</div>
-          <div class="lados border">12</div>
-          <div class="lados border">13</div>
-          <div class="lados border">14</div>
-          <div class="lados border">15</div>
-          <div class="lados border">16</div>
-        </div>
-      </div> -->
